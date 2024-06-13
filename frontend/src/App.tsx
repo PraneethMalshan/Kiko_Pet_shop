@@ -1,7 +1,7 @@
 // import { useState } from 'react'
-import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
+import { Container, Nav, Navbar,  } from 'react-bootstrap'
 import './App.css'
-import { sampleProducts } from './data'
+import { Outlet } from 'react-router-dom'
 
 function App() {
 
@@ -23,7 +23,7 @@ function App() {
       </header>
       <main>
           <Container className='mt-3'>
-            
+              <Outlet />
           </Container>   
       </main>
       
