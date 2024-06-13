@@ -1,5 +1,5 @@
 // import { useState } from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Col, Container, Nav, Navbar, Row } from 'react-bootstrap'
 import './App.css'
 import { sampleProducts } from './data'
 
@@ -22,19 +22,21 @@ function App() {
         </Navbar>
       </header>
       <main>
-          <ul>
-            {sampleProducts.map((product) => (
-                <li key={product.slug}>
-                  <img 
-                    className='max-w-xs w-full' 
-                    src={product.image} 
-                    alt={product.name} 
-                  />
-                  <h2 className='text-3xl font-bold'>{product.name}</h2>
-                  <p>${product.price}</p>
-                </li>
-              ))}
-          </ul>       
+          <Container className='mt-3'>
+            <Row>
+              {sampleProducts.map((product) => (
+                  <Col key={product.slug} sm={6} md={4} lg={3}>
+                    <img 
+                      className='max-w-xs w-full' 
+                      src={product.image} 
+                      alt={product.name} 
+                    />
+                    <h2 className='text-3xl font-bold'>{product.name}</h2>
+                    <p>${product.price}</p>
+                  </Col>
+                ))}
+            </Row>    
+          </Container>   
       </main>
       
       <footer>
