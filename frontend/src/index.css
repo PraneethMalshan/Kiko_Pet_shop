@@ -10,10 +10,18 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.product-image {
+  max-width: 400px;
+  width: 100%;
+}
+
 .rating span {
   color: #ffc000;
 }
 
+.img.large {
+  max-width: 100%;
+}
 
 
 
