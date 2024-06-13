@@ -1,17 +1,46 @@
+// import { useState } from 'react'
+import { Container, Nav, Navbar } from 'react-bootstrap'
 import './App.css'
+import { sampleProducts } from './data'
 
 function App() {
 
+  // const [count, setCount] = useState(0)
+
   return (
-    <div>
+    <div className='d-flex flex-column vh-100'>
       <header>
-        Kiko_Pet_Shop
+        <Navbar bg='dark' variant='dark' expand="lg">
+          <Container>
+            <Navbar.Brand>Kiko Pet Shop</Navbar.Brand>
+          </Container>
+
+          <Nav>
+            <a href="/cart" className='nav-link'>Cart</a>
+            <a href="/signin" className='nav-link'>Sign In</a>
+          </Nav>
+        </Navbar>
       </header>
       <main>
-
+          <ul>
+            {sampleProducts.map((product) => (
+                <li key={product.slug}>
+                  <img 
+                    className='max-w-xs w-full' 
+                    src={product.image} 
+                    alt={product.name} 
+                  />
+                  <h2 className='text-3xl font-bold'>{product.name}</h2>
+                  <p>${product.price}</p>
+                </li>
+              ))}
+          </ul>       
       </main>
+      
       <footer>
-        All right reserved 
+        <div className='text-center'>
+          All right reserved 
+        </div>
       </footer>
     </div>
   )
